@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080f1b" />
+  <meta name="description" content="An accessible, data-faithful exploration of Earth's changing climate through sound." />
+  <title>Earth Jukebox — Hear the planet change</title>
+  <link rel="stylesheet" href="./src/styles/app.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Earth Jukebox home">
+        <span class="brand-mark"><span class="brand-orbit"></span><span class="brand-dot"></span></span>
+        <span class="brand-copy"><strong>EARTH<span class="brand-line">/</span>JUKEBOX</strong><small>SONIFYING OUR PLANET</small></span>
+      </a>
+      <div class="side-section-label">EXPLORE</div>
+      <nav class="side-nav" aria-label="Dataset tracks">
+        <button class="nav-link active" data-track="temperature" type="button" aria-current="page"><span class="nav-icon temp-icon">◉</span><span>Global temperature</span><span class="nav-arrow">↗</span></button>
+        <button class="nav-link" data-track="ice" type="button"><span class="nav-icon ice-icon">✳</span><span>Arctic sea ice</span><span class="nav-arrow">↗</span></button>
+      </nav>
+      <div class="side-divider"></div>
+      <div class="side-section-label">YOUR WORKSPACE</div>
+      <nav class="side-nav" aria-label="Workspace tools">
+        <button class="nav-link side-action" data-scroll="audio-settings"><span class="mini-icon">♫</span><span>Audio laboratory</span></button>
+        <button class="nav-link side-action" data-scroll="data-source"><span class="mini-icon">▤</span><span>Data provenance</span></button>
+        <button class="nav-link side-action" data-action="download-data"><span class="mini-icon">⇩</span><span>Export CSV</span></button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="side-help"><span class="help-sun">◌</span><div><strong>Made to be heard.</strong><p>Scientific data, translated into sound. Every note has a number behind it.</p><a href="https://www.spaceappschallenge.org/" target="_blank" rel="noopener noreferrer">NASA Space Apps ↗</a></div></div>
+      <div class="side-foot"><span class="signal-dot"></span> NO API KEY REQUIRED <span class="version">V 0.1</span></div>
+    </aside>
+
+    <main class="main" id="top">
+      <header class="topbar">
+        <div class="breadcrumb">THE JUKEBOX <span>/</span> <strong>EARTH EXPLORER</strong></div>
+        <div class="top-meta"><span class="top-nasa">NASA / EIC INSPIRED</span><span class="divider-dot">·</span><span id="top-date">DATA-DRIVEN SONIFICATION</span><button class="icon-button info-trigger" data-action="help" aria-label="About the project" title="About the project">?</button></div>
+      </header>
+      <div class="content">
+        <div class="hero-title-row">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span> A NEW WAY TO EXPERIENCE EARTH SCIENCE</div><h1>Hear the planet <em>change.</em></h1><p class="hero-subtitle">A multi-sensory journey through our changing Earth. Explore the data, listen to the patterns, discover the story.</p></div>
+          <div class="hero-index"><span class="index-top">CURRENT COLLECTION</span><strong>02<span class="slash-num"> / 02</span></strong><span class="index-bottom">SCIENTIFIC SOUND JOURNEYS</span></div>
+        </div>
+        <div class="eyebrow track-eyebrow">NOW EXPLORING <span class="tiny-rule"></span> <span id="track-series">01 / 02</span></div>
+        <section class="active-track" aria-labelledby="track-title">
+          <div class="track-banner"><div><div class="track-cat"><span class="pulse-chip"></span><span id="track-category">ATMOSPHERE / GLOBAL</span></div><h2 id="track-title">Global temperature</h2><p id="track-description">A century and a half of change</p></div><div class="track-year-tag"><span>OBSERVATION</span><strong id="hero-year">2025</strong></div></div>
+          <div class="visual-grid">
+            <div class="visual-stage" id="visual-stage"><div class="visual-watermark">EARTH / IN MOTION</div><div id="dynamic-visual" class="dynamic-visual" role="img" aria-label="Data-driven visualization of the selected observation"></div><div class="visual-bottom"><span><span class="live-pill"></span> DATA-DRIVEN VISUAL</span><span id="visual-year">1880 — 2025</span></div></div>
+            <div class="insights-panel">
+              <div class="reading-title"><span>LIVE READING</span><span class="reading-bars">▂▄▆▄▂</span></div>
+              <div class="reading-value"><span id="current-value">+1.19</span><span id="current-unit" class="reading-unit">°C</span></div>
+              <div id="reading-label" class="reading-caption">Annual temperature anomaly</div>
+              <div class="reading-rule"></div>
+              <div class="reading-stats"><div><span>FIRST OBSERVATION</span><strong id="first-year-value">1880 <b>−0.17 °C</b></strong></div><div><span>CHANGE FROM START</span><strong id="delta-value" class="delta-warm">+1.36 °C</strong></div></div>
+              <div class="reading-source"><span class="small-tag">SOURCE</span><strong id="reading-source">NASA GISS · GISTEMP v4</strong></div>
+            </div>
+          </div>
+          <div class="stage-controls"><div class="stage-control-left"><span class="stage-label">TIMELINE</span><span class="timeline-current" id="timeline-current">2025</span></div><input id="timeline" type="range" min="0" max="145" value="145" step="1" aria-label="Select observation year"><div class="stage-control-right"><span id="timeline-start">1880</span><span id="timeline-end">2025</span></div></div>
+        </section>
+        <div class="lower-grid">
+          <div class="column-primary">
+            <section class="panel data-panel" aria-labelledby="chart-title"><div class="panel-heading"><div><div class="panel-kicker">THE DATA BEHIND THE SOUND</div><h3 id="chart-title">The bigger picture</h3></div><div class="chart-tools"><span id="chart-unit">TEMPERATURE ANOMALY (°C)</span><button class="quiet-icon" data-action="download-data" aria-label="Download dataset as CSV" title="Download CSV">↧</button></div></div><div id="chart" class="chart" role="img" aria-label="Time series of data values"></div><div class="chart-footer"><span id="chart-range">1880 — 2025</span><span class="chart-tooltip"><i></i> SELECTED OBSERVATION</span></div></section>
+            <section class="panel source-panel" id="data-source" aria-labelledby="source-title"><div class="panel-heading source-heading"><div><div class="panel-kicker">OPEN SCIENCE / TRACEABLE SOURCES</div><h3 id="source-title">Where this sound comes from</h3></div><span class="verified-text">↗ SOURCE LINKED</span></div><p class="source-summary" id="source-summary">Each audio event corresponds to a real observed annual data point, not randomly generated musical values.</p><div class="source-row"><div><span class="source-label">OBSERVATION DATA</span><strong id="dataset-source-title">NASA Goddard Institute for Space Studies</strong></div><a id="dataset-source-url" href="https://data.giss.nasa.gov/gistemp/" target="_blank" rel="noopener noreferrer">DATASET ↗</a></div><div class="source-row"><div><span class="source-label">NASA VISUAL REFERENCE</span><strong id="visualization-source-title">NASA Climate Spiral</strong></div><a id="visualization-source-url" href="https://svs.gsfc.nasa.gov/5190/" target="_blank" rel="noopener noreferrer">VIEW ↗</a></div><p id="source-caveat" class="source-caveat">The in-app graphics derive from the underlying dataset; the NASA still is a separate reference.</p></section>
+          </div>
+          <div class="column-secondary">
+            <section class="panel audio-panel" id="audio-settings" aria-labelledby="audio-title"><div class="panel-heading"><div><div class="panel-kicker">THE SONIFICATION ENGINE</div><h3 id="audio-title">Sound laboratory <span class="beta-tag">LIVE</span></h3></div></div><div class="audio-monitor"><div class="wave-header"><span><i class="mini-status"></i> GENERATIVE AUDIO</span><span id="monitor-state">READY</span></div><canvas id="waveform" width="540" height="128" aria-label="Animated audio level visualization"></canvas><div class="wave-bottom"><span>DATA → SOUND</span><span id="note-display">— Hz</span></div></div><div class="lab-mode-title">ENCODING MODE <button class="detail-icon" title="Scientific mode uses a continuous frequency mapping; musical mode quantizes notes to a pentatonic scale." aria-label="Explanation of audio encoding mode">ⓘ</button></div><div class="segmented"><button data-mode="scientific" class="selected" aria-pressed="true">Scientific</button><button data-mode="musical" aria-pressed="false">Musical</button></div><div class="setting-row"><div><label for="pace">Playback speed</label><span>Observations per second</span></div><output id="pace-output">3 / sec</output></div><input id="pace" type="range" min="1" max="10" step="1" value="3" aria-label="Observations per second"/><div class="setting-row"><div><label for="pitch">Pitch span</label><span>Higher = broader note range</span></div><output id="pitch-output">70%</output></div><input id="pitch" type="range" min="20" max="100" value="70" step="5" aria-label="Pitch span"/><div class="setting-row"><div><label for="brightness">Timbre brightness</label><span>Shapes the harmonic texture</span></div><output id="brightness-output">45%</output></div><input id="brightness" type="range" min="0" max="100" value="45" step="5" aria-label="Timbre brightness"/><div class="setting-row"><div><label for="volume">Master volume</label><span>Start low; use headphones</span></div><output id="volume-output">45%</output></div><input id="volume" type="range" min="0" max="100" value="45" step="5" aria-label="Master volume"/><label class="switch-row"><span><strong>Temporal tick</strong><small>Mark each new observation</small></span><input type="checkbox" id="tick-toggle" checked><span class="switch" aria-hidden="true"></span></label><div class="lab-actions"><button class="outline-btn" id="test-note" type="button">♫ Hear this data point</button><button class="outline-btn" id="record-btn" type="button" aria-pressed="false">◌ Record audio</button></div><p class="lab-footnote">Every parameter can be revised in <code>src/audio/mappings.js</code> and <code>src/audio/presets.js</code>.</p></section>
+            <section class="panel reference-panel"><div class="panel-kicker">FROM NASA'S VISUAL ARCHIVE</div><h3>See the original story</h3><div class="nasa-image-wrap"><img id="nasa-reference-image" src="" loading="lazy" alt="NASA scientific visualization reference image"/><span class="nasa-image-label">NASA SVS / REFERENCE IMAGE</span></div><p id="nasa-reference-note">NASA imagery is a static visual reference; audio follows the selected dataset, not the pixels in this photograph.</p><a id="nasa-reference-link" href="https://svs.gsfc.nasa.gov/5190/" target="_blank" rel="noopener noreferrer" class="reference-link">OPEN NASA VISUALIZATION <span>↗</span></a></section>
+          </div>
+        </div>
+        <footer class="page-footer"><span>EARTH JUKEBOX <b>·</b> An independent, NASA Space Apps-inspired prototype. Not an official NASA product.</span><span>BUILT FOR EARS AND EYES  ◡</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="transport" role="region" aria-label="Audio playback controls"><div class="transport-track"><span class="transport-disc">◉</span><div><strong id="transport-title">Global temperature</strong><span id="transport-subtitle">Annual observations · NASA GISTEMP</span></div></div><div class="transport-center"><button id="skip-back" class="transport-skip" aria-label="Previous observation" title="Previous">Ⅰ◀</button><button id="play-btn" class="transport-play" type="button" aria-label="Play sonification" title="Play">▶</button><button id="skip-forward" class="transport-skip" aria-label="Next observation" title="Next">▶Ⅰ</button><span class="transport-divider"></span><span id="transport-position" class="transport-position">2025 / 2025</span></div><div class="transport-right"><button id="describe-btn" title="Speak the selected observation" aria-label="Speak current data point">☷ <span>DESCRIBE</span></button><span class="transport-headphones">♧ <span>HEADPHONES RECOMMENDED</span></span></div></div>
+  <dialog id="about-dialog" class="about-dialog"><form method="dialog"><button class="dialog-x" aria-label="Close">×</button><div class="panel-kicker">ABOUT THIS PROTOTYPE</div><h2>How to listen to Earth</h2><p>Earth Jukebox turns published Earth science measurements into synthesized notes in your browser. The same data powers the live graph and the visualization. All sound mappings are editable.</p><p><strong>Scientific mode</strong> encodes measured values along a continuous pitch range. <strong>Musical mode</strong> snaps them to a pentatonic scale to make a more melodic result. These are mappings, not literal sounds Earth makes.</p><p>Use Tab to move between controls. Use Space on Play, arrow keys on sliders, and Describe to hear the current reading spoken. Playback and recording require a browser that supports the Web Audio API.</p><p>The NASA imagery is a visual reference and is not synchronized by observation date. Provenance and limitations are documented in <code>DATA_SOURCES.md</code>.</p><button class="outline-btn" value="close">BACK TO THE JUKEBOX</button></form></dialog>
+  <div id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
